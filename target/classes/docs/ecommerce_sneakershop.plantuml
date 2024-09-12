@@ -1,0 +1,54 @@
+@startuml
+
+class pessoa{
+- nome : String
+- cpf : String
+- email : String
+- status : String
+}
+
+class funcionrio{
+- cargo : String
+
+}
+
+class cliente{
+- endereco : String
+}
+
+class usuario{
+- login : String
+- senha : String
+- data : LocalDate
+}
+
+class venda{
+- valorFinal : Double
+- formaPagamento : String
+- data : LocalDate
+}
+
+class pedido{
+- quantidade : Integer
+- valor : Double
+- desconto : Double
+}
+
+class tenis{
+- numeracao : Integer
+- marca : String
+- modelo : String
+- estoque : Integer
+- data : LocalDate
+}
+
+pessoa <-- cliente
+pessoa <-- funcionrio
+pessoa --> usuario
+
+pedido --> tenis
+venda --> pedido
+
+cliente --> venda
+
+@enduml
